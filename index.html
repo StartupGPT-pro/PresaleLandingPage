@@ -241,7 +241,20 @@
     <link rel="stylesheet" crossorigin href="./assets/index-DOctrP4i.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <script type="module">
+        import React from 'https://cdn.skypack.dev/react';
+        import ReactDOM from 'https://cdn.skypack.dev/react-dom';
+        import ReferralLinkGenerator from '../src/components/ReferralLinkGenerator.js';
+        
+        ReactDOM.render(
+          <React.StrictMode>
+            <ReferralLinkGenerator />
+          </React.StrictMode>,
+          document.getElementById('root')
+        );
+      </script>
+    </div>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17330092845"></script>
