@@ -239,6 +239,55 @@
     <link rel="modulepreload" crossorigin href="./assets/react-vendor-CIP6LD3P.js">
     <link rel="modulepreload" crossorigin href="./assets/utils-BzrgaQw0.js">
     <link rel="stylesheet" crossorigin href="./assets/index-DfmIOYsF.css">
+    
+    <!-- Custom CSS for better contrast -->
+    <style>
+      /* Enhanced contrast for text with links */
+      .text-accent-contrast {
+        color: hsl(263 70% 50.4%); /* Primary color for light theme */
+      }
+      
+      .dark .text-accent-contrast {
+        color: hsl(263 70% 65%); /* Lighter purple for dark theme */
+      }
+      
+      /* Ensure good contrast for any text containing vowcraft.io */
+      p:has(a[href*="vowcraft"]), 
+      p:contains("vowcraft"),
+      p:contains("Lean Startup") {
+        color: hsl(240 5.9% 10%); /* Dark text for light theme */
+      }
+      
+      .dark p:has(a[href*="vowcraft"]), 
+      .dark p:contains("vowcraft"),
+      .dark p:contains("Lean Startup") {
+        color: hsl(210 40% 90%); /* Light text for dark theme */
+      }
+      
+      /* Enhanced link styles */
+      a[href*="vowcraft"] {
+        color: hsl(263 70% 50.4%);
+        text-decoration: underline;
+        font-weight: 500;
+      }
+      
+      .dark a[href*="vowcraft"] {
+        color: hsl(263 70% 65%);
+      }
+      
+      a[href*="vowcraft"]:hover {
+        color: hsl(263 70% 40%);
+      }
+      
+      .dark a[href*="vowcraft"]:hover {
+        color: hsl(263 70% 75%);
+      }
+      
+      /* Override any inline styles for better contrast */
+      [style*="color"] {
+        color: inherit !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root">
