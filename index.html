@@ -235,382 +235,506 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="./assets/index-BQq3Xqja.js"></script>
+    <script type="module" crossorigin src="./assets/index-qP0u4Uve.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/react-vendor-CIP6LD3P.js">
     <link rel="modulepreload" crossorigin href="./assets/utils-BzrgaQw0.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-DfmIOYsF.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-BoLjvuRf.css">
     
-    <!-- Custom CSS for better contrast -->
+    <!-- Basic styles for static content (SEO) -->
     <style>
-      /* Enhanced contrast for text with links */
-      .text-accent-contrast {
-        color: hsl(263 70% 50.4%); /* Primary color for light theme */
+      /* Hide static content once React loads */
+      #root:not(:empty) .startupgpt-static {
+        display: none;
       }
       
-      .dark .text-accent-contrast {
-        color: hsl(263 70% 65%); /* Lighter purple for dark theme */
+      /* Basic styling for static content */
+      .startupgpt-static {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
       }
       
-      /* Ensure good contrast for any text containing vowcraft.io */
-      p:has(a[href*="vowcraft"]), 
-      p:contains("vowcraft"),
-      p:contains("Lean Startup") {
-        color: hsl(240 5.9% 10%); /* Dark text for light theme */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
       }
       
-      .dark p:has(a[href*="vowcraft"]), 
-      .dark p:contains("vowcraft"),
-      .dark p:contains("Lean Startup") {
-        color: hsl(210 40% 90%); /* Light text for dark theme */
+      .site-header {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
       }
       
-      /* Enhanced link styles */
-      a[href*="vowcraft"] {
-        color: hsl(263 70% 50.4%);
-        text-decoration: underline;
-        font-weight: 500;
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
       
-      .dark a[href*="vowcraft"] {
-        color: hsl(263 70% 65%);
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
       }
       
-      a[href*="vowcraft"]:hover {
-        color: hsl(263 70% 40%);
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
       }
       
-      .dark a[href*="vowcraft"]:hover {
-        color: hsl(263 70% 75%);
+      .nav-links a {
+        text-decoration: none;
+        color: #666;
       }
       
-      /* Override any inline styles for better contrast */
-      [style*="color"] {
-        color: inherit !important;
+      section {
+        padding: 4rem 0;
+      }
+      
+      h1, h2, h3 {
+        margin-bottom: 1rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .hero-section {
+        text-align: center;
+        padding: 5rem 0;
+      }
+      
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      
+      .btn-primary {
+        background: #6366f1;
+        color: white;
+      }
+      
+      .btn-secondary {
+        background: #f3f4f6;
+        color: #333;
+      }
+      
+      .features-grid,
+      .steps-grid,
+      .pricing-grid,
+      .testimonials-grid,
+      .faq-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      
+      .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      
+      .feature-card,
+      .pricing-card,
+      .testimonial,
+      .faq-item {
+        padding: 2rem;
+        border: 1px solid #eee;
+        border-radius: 0.5rem;
+      }
+      
+      .pricing-card.featured {
+        border-color: #6366f1;
+        position: relative;
+      }
+      
+      .badge {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #6366f1;
+        color: white;
+        padding: 0.25rem 1rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+      }
+      
+      .price {
+        margin: 1rem 0;
+      }
+      
+      .current-price {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      
+      .original-price {
+        text-decoration: line-through;
+        color: #999;
+        margin-left: 0.5rem;
+      }
+      
+      .site-footer {
+        background: #f9fafb;
+        padding: 3rem 0 1rem;
+        margin-top: 5rem;
+      }
+      
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-section a {
+        color: #666;
+        text-decoration: none;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        color: #666;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        h1 {
+          font-size: 2rem;
+        }
+        
+        h2 {
+          font-size: 1.5rem;
+        }
       }
     </style>
   </head>
   <body>
     <div id="root">
-      <!-- Static HTML for SEO and AI agents - will be replaced by React on client-side -->
-      
-      <!-- Header Navigation -->
-      <header class="fixed top-0 left-0 right-0 z-40 glass-effect border-b">
-        <div class="max-width-container section-padding">
-          <div class="flex items-center justify-between h-16">
-            <div class="flex items-center">
-              <a href="/" class="flex items-center space-x-3">
-                <span class="text-2xl">🚀</span>
-                <span class="text-xl font-semibold">StartupGPT</span>
+      <!-- Static content for SEO - will be replaced by React when it loads -->
+      <div class="startupgpt-static">
+        <!-- Header -->
+        <header class="site-header">
+          <div class="container">
+            <nav class="navbar">
+              <a href="/" class="logo">
+                <span>🚀</span>
+                <span>StartupGPT</span>
               </a>
-            </div>
-            <nav class="hidden md:flex items-center space-x-6">
-              <a href="#features" class="text-sm font-medium">Features</a>
-              <a href="#how-it-works" class="text-sm font-medium">How It Works</a>
-              <a href="#pricing" class="text-sm font-medium">Pricing</a>
-              <a href="#testimonials" class="text-sm font-medium">Testimonials</a>
+              <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+              </ul>
             </nav>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <!-- Hero Section -->
-      <section class="pt-20 pb-16 md:pt-32 md:pb-24">
-        <div class="max-width-container section-padding">
-          <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Launch Your First Customer in 30 Days with AI</h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Stop wasting 6-12 months building startups that fail. StartupGPT validates your idea and gets you to revenue in 30 days with 6 AI agents working 24/7.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button class="px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors">
-                Start Building Now
-              </button>
-              <button class="px-8 py-4 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
-                Watch Demo
-              </button>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="container">
+            <h1>Stop Wasting 6-12 Months Building Startups That Fail</h1>
+            <h2>Go from idea to paying customers in 30 days with 6 AI agents working 24/7</h2>
+            <p class="hero-stats">Join 500+ founders who've generated $7.5M+ revenue</p>
+            <div class="hero-buttons">
+              <a href="#pricing" class="btn btn-primary">🚀 Start Your Startup Now</a>
+              <a href="#demo" class="btn btn-secondary">Watch Live Demo</a>
             </div>
-            <p class="text-sm text-gray-500">Join 500+ founders. First Customer in 30 Days or Money Back.</p>
+            <p class="guarantee">✅ First Customer in 30 Days or Money Back</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Live Demo Section -->
-      <section class="py-16 bg-gray-50">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">See StartupGPT in Action</h2>
-            <p class="text-xl text-gray-600">Watch how we created vowcraft.io in just 72 hours</p>
+        <!-- Live Demo Section -->
+        <section id="demo" class="demo-section">
+          <div class="container">
+            <h2>🎯 See StartupGPT in Action</h2>
+            <p>Watch how our AI agents transform your idea into a revenue-generating business</p>
+            <img src="/images/demo.gif" alt="StartupGPT Demo - AI agents building a startup from idea to launch" loading="lazy">
           </div>
-          <div class="max-w-4xl mx-auto">
-            <img src="./images/startupgpt-animation.gif" alt="StartupGPT creating vowcraft.io" class="w-full rounded-lg shadow-xl" loading="lazy">
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Features Section -->
-      <section id="features" class="py-16 md:py-24">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">6 AI Agents Working 24/7 For You</h2>
-            <p class="text-xl text-gray-600">Each agent specializes in a critical aspect of startup success</p>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">🔍</div>
-              <h3 class="text-xl font-semibold mb-2">Market Research Agent</h3>
-              <p class="text-gray-600">Analyzes market trends, competition, and identifies untapped opportunities in real-time.</p>
-            </div>
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">💡</div>
-              <h3 class="text-xl font-semibold mb-2">Business Model Agent</h3>
-              <p class="text-gray-600">Designs revenue streams, pricing strategies, and sustainable business models.</p>
-            </div>
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">👥</div>
-              <h3 class="text-xl font-semibold mb-2">Customer Discovery Agent</h3>
-              <p class="text-gray-600">Identifies and validates your ideal customer profile and their pain points.</p>
-            </div>
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">🛠️</div>
-              <h3 class="text-xl font-semibold mb-2">MVP Builder Agent</h3>
-              <p class="text-gray-600">Creates functional prototypes and MVPs without coding knowledge required.</p>
-            </div>
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">📈</div>
-              <h3 class="text-xl font-semibold mb-2">Growth Hacking Agent</h3>
-              <p class="text-gray-600">Implements viral growth strategies and automated marketing campaigns.</p>
-            </div>
-            <div class="p-6 border rounded-lg">
-              <div class="text-3xl mb-4">📊</div>
-              <h3 class="text-xl font-semibold mb-2">Pitch Deck Agent</h3>
-              <p class="text-gray-600">Creates investor-ready pitch decks and financial projections.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- How It Works Section -->
-      <section id="how-it-works" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">From Idea to Revenue in 5 Steps</h2>
-            <p class="text-xl text-gray-600">Our AI agents handle the heavy lifting while you focus on vision</p>
-          </div>
-          <div class="space-y-8">
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Share Your Idea (10 minutes)</h3>
-                <p class="text-gray-600">Tell us your startup idea in plain English. Our AI understands context and asks clarifying questions.</p>
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+          <div class="container">
+            <h2>Your 24/7 AI Co-Founder Team</h2>
+            <p class="section-subtitle">6 specialized AI agents replace an entire startup team</p>
+            <div class="features-grid">
+              <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>Market Research Agent</h3>
+                <p>Validates demand in 24 hours. Analyzes 1000+ data points to find your perfect niche.</p>
               </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
-              <div>
-                <h3 class="text-xl font-semibold mb-2">AI Validates & Refines (2-4 hours)</h3>
-                <p class="text-gray-600">Our agents research the market, validate demand, and refine your concept for product-market fit.</p>
+              <div class="feature-card">
+                <span class="feature-icon">💡</span>
+                <h3>Business Model Agent</h3>
+                <p>Designs profitable revenue streams. Creates pricing that customers actually pay for.</p>
               </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Build Your MVP (1-2 days)</h3>
-                <p class="text-gray-600">AI agents create your landing page, product prototype, and set up payment processing.</p>
+              <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Customer Discovery Agent</h3>
+                <p>Finds and profiles your ideal customers. No more guessing who will buy.</p>
               </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Launch & Get Traffic (Day 3)</h3>
-                <p class="text-gray-600">Deploy your startup and activate growth campaigns across multiple channels.</p>
+              <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3>MVP Builder Agent</h3>
+                <p>Launches your product in days, not months. Professional, scalable, ready to sell.</p>
               </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">5</div>
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Scale with AI (Ongoing)</h3>
-                <p class="text-gray-600">Continuous optimization, A/B testing, and scaling based on real customer data.</p>
+              <div class="feature-card">
+                <span class="feature-icon">📈</span>
+                <h3>Growth Hacking Agent</h3>
+                <p>Acquires your first 100 customers. Runs campaigns that actually convert.</p>
+              </div>
+              <div class="feature-card">
+                <span class="feature-icon">💰</span>
+                <h3>Pitch Deck Agent</h3>
+                <p>Creates investor-ready presentations. Helps you raise funding when you're ready.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Pricing Section -->
-      <section id="pricing" class="py-16 md:py-24">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p class="text-xl text-gray-600">40% off thanks to OpenAI's latest efficiency improvements</p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div class="border rounded-lg p-8">
-              <h3 class="text-2xl font-bold mb-2">Single Solopreneur</h3>
-              <div class="text-4xl font-bold mb-4">$299</div>
-              <p class="text-gray-600 mb-6">1 Startup Launch</p>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>All 6 AI Agents</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>$200 Marketing Budget</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>30-Day Guarantee</span>
-                </li>
-              </ul>
-              <button class="w-full py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50">Get Started</button>
-            </div>
-            <div class="border-2 border-primary rounded-lg p-8 relative">
-              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">Most Popular</div>
-              <h3 class="text-2xl font-bold mb-2">Entrepreneur Bundle</h3>
-              <div class="text-4xl font-bold mb-4">$999</div>
-              <p class="text-gray-600 mb-6">3 Startup Launches</p>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>All 6 AI Agents</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>$750 Marketing Budget</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>Priority Support</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>60-Day Guarantee</span>
-                </li>
-              </ul>
-              <button class="w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark">Get Started</button>
-            </div>
-            <div class="border rounded-lg p-8">
-              <h3 class="text-2xl font-bold mb-2">Multipreneur Bundle</h3>
-              <div class="text-4xl font-bold mb-4">$2,499</div>
-              <p class="text-gray-600 mb-6">10 Startup Launches</p>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>All 6 AI Agents</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>$3000 Marketing Budget</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>White-glove Support</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-green-500">✓</span>
-                  <span>Custom AI Training</span>
-                </li>
-              </ul>
-              <button class="w-full py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">500+ Founders, $7.5M+ Generated</h2>
-            <p class="text-xl text-gray-600">Real results from real entrepreneurs</p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow">
-              <div class="flex gap-1 mb-4">
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works-section">
+          <div class="container">
+            <h2>Your Path to $10K/Month</h2>
+            <p class="section-subtitle">From zero to revenue in 4 simple steps</p>
+            <div class="steps-grid">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3>Share Your Idea (10 mins)</h3>
+                <p>Tell our AI your startup idea. It instantly analyzes market potential and viability.</p>
               </div>
-              <p class="text-gray-700 mb-4">"StartupGPT helped me launch my SaaS in just 3 weeks. The AI agents handle everything from market research to customer acquisition. Already at $8K MRR!"</p>
-              <p class="font-semibold">Sarah Chen</p>
-              <p class="text-sm text-gray-500">Founder, DataSync Pro</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-              <div class="flex gap-1 mb-4">
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>AI Validates Market (24 hours)</h3>
+                <p>Our agents research demand, competition, and find your first 1,000 potential customers.</p>
               </div>
-              <p class="text-gray-700 mb-4">"Tried building startups for years. StartupGPT got me my first paying customer in 12 days. Game changer!"</p>
-              <p class="font-semibold">Marcus Johnson</p>
-              <p class="text-sm text-gray-500">Founder, FitTracker AI</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-              <div class="flex gap-1 mb-4">
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
-                <span class="text-yellow-400">★</span>
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Build Your MVP (1-2 days)</h3>
+                <p>AI agents create your landing page, product prototype, and set up payment processing.</p>
               </div>
-              <p class="text-gray-700 mb-4">"From idea to $15K in revenue in 30 days. The MVP Builder Agent created exactly what my customers wanted."</p>
-              <p class="font-semibold">Emma Rodriguez</p>
-              <p class="text-sm text-gray-500">Founder, LocalBiz Connect</p>
+              <div class="step">
+                <div class="step-number">4</div>
+                <h3>Get Paying Customers (Week 1)</h3>
+                <p>Launch targeted campaigns, onboard users, and start generating revenue immediately.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- FAQ Section -->
-      <section id="faq" class="py-16 md:py-24">
-        <div class="max-width-container section-padding">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+          <div class="container">
+            <h2>🔥 Limited Presale - 50% OFF</h2>
+            <p class="pricing-subtitle">Regular prices return September 1, 2025</p>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <h3>Solopreneur</h3>
+                <div class="price">
+                  <span class="current-price">$497</span>
+                  <span class="original-price">$997</span>
+                </div>
+                <p class="price-description">Launch 1 Startup</p>
+                <ul>
+                  <li>✅ All 6 AI Agents</li>
+                  <li>✅ Google Ads Budget</li>
+                  <li>✅ Social Media Budget</li>
+                  <li>✅ Community Access</li>
+                  <li>✅ 30-Day Guarantee</li>
+                  <li>✅ Keep 100% Revenue</li>
+                </ul>
+                <a href="https://buy.stripe.com/4gw3fa4lKgoC39KeUU" class="btn btn-primary">Start Now →</a>
+              </div>
+              <div class="pricing-card featured">
+                <div class="badge">MOST POPULAR</div>
+                <h3>Entrepreneur</h3>
+                <div class="price">
+                  <span class="current-price">$1,397</span>
+                  <span class="original-price">$2,991</span>
+                </div>
+                <p class="price-description">Launch 3 Startups</p>
+                <ul>
+                  <li>✅ Everything in Solopreneur</li>
+                  <li>✅ 3x More Value</li>
+                  <li>✅ Priority Support</li>
+                  <li>✅ Advanced Analytics</li>
+                  <li>✅ Custom Branding</li>
+                  <li>✅ 90% Revenue Share</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oE2b84lK5K4gLCcMN" class="btn btn-primary">Start Now →</a>
+              </div>
+              <div class="pricing-card">
+                <h3>Multipreneur</h3>
+                <div class="price">
+                  <span class="current-price">$3,997</span>
+                  <span class="original-price">$9,970</span>
+                </div>
+                <p class="price-description">Launch 10 Startups</p>
+                <ul>
+                  <li>✅ Everything in Entrepreneur</li>
+                  <li>✅ Custom AI Training</li>
+                  <li>✅ White-Glove Service</li>
+                  <li>✅ Direct Founder Access</li>
+                  <li>✅ Investment Intros</li>
+                  <li>✅ 90% Revenue Share</li>
+                </ul>
+                <a href="https://buy.stripe.com/8wM02Y0600pGeLCeUW" class="btn btn-primary">Start Now →</a>
+              </div>
+            </div>
+            <p class="pricing-note">🔒 Secure checkout powered by Stripe • Cancel anytime</p>
           </div>
-          <div class="max-w-3xl mx-auto space-y-6">
-            <div class="border rounded-lg p-6">
-              <h3 class="text-xl font-semibold mb-2">What exactly is StartupGPT?</h3>
-              <p class="text-gray-600">StartupGPT is your virtual co-founder — an AI-powered SaaS platform that helps you go from idea to paying customers in as little as one day to one weekend, instead of the usual 6–12 months.</p>
-            </div>
-            <div class="border rounded-lg p-6">
-              <h3 class="text-xl font-semibold mb-2">How long does it take to launch a startup?</h3>
-              <p class="text-gray-600">You could go from zero to revenue in a single weekend — or take it step-by-step over 30 days. The journey includes: Ideation (2-4 hours), Planning (2-4 hours), Build (2-8 hours), Content (2-4 hours), Launch (1-2 hours), and ongoing Promotion.</p>
-            </div>
-            <div class="border rounded-lg p-6">
-              <h3 class="text-xl font-semibold mb-2">What's included in the pricing?</h3>
-              <p class="text-gray-600">All plans include: 6 AI agents working 24/7, Google Ads marketing budget, social media marketing budget, private founder community, all future updates, and a $10,000 VC-backed marketing budget after 100 customers.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- CTA Section -->
-      <section class="py-16 md:py-24 bg-primary text-white">
-        <div class="max-width-container section-padding text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Launch Your Startup?</h2>
-          <p class="text-xl mb-8 opacity-90">Join 500+ founders who've already transformed their ideas into revenue</p>
-          <button class="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Start Building Now - 30 Day Guarantee
-          </button>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="py-12 border-t">
-        <div class="max-width-container section-padding">
-          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🚀</span>
-              <span class="font-semibold">StartupGPT</span>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+          <div class="container">
+            <h2>Join 500+ Successful Founders</h2>
+            <p class="section-subtitle">Real results from real entrepreneurs</p>
+            <div class="testimonials-grid">
+              <div class="testimonial">
+                <p>"StartupGPT helped me launch my SaaS in just 3 weeks. The AI agents handle everything from market research to customer acquisition. Already at $8K MRR!"</p>
+                <div class="testimonial-author">
+                  <strong>Sarah Chen</strong>
+                  <span>Founder, DataSync Pro</span>
+                </div>
+              </div>
+              <div class="testimonial">
+                <p>"I've tried building startups for years. StartupGPT got me my first paying customer in 12 days. Game changer!"</p>
+                <div class="testimonial-author">
+                  <strong>Marcus Johnson</strong>
+                  <span>Founder, FitTracker AI</span>
+                </div>
+              </div>
+              <div class="testimonial">
+                <p>"The AI validated my idea was wrong and helped me pivot to something profitable. Saved me months of wasted effort."</p>
+                <div class="testimonial-author">
+                  <strong>Emily Rodriguez</strong>
+                  <span>Founder, RemoteTools</span>
+                </div>
+              </div>
             </div>
-            <p class="text-sm text-gray-500">© 2024 StartupGPT. All rights reserved.</p>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+              <div class="faq-item">
+                <h3>What exactly is StartupGPT?</h3>
+                <p>StartupGPT is your virtual co-founder — an AI-powered SaaS platform that helps you go from idea to paying customers in as little as one day to one weekend, instead of the usual 6–12 months.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need technical skills?</h3>
+                <p>No! StartupGPT was built for non-technical founders. Our AI agents handle all the technical work while you focus on your vision.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What's included in the pricing?</h3>
+                <p>All plans include: 6 AI agents working 24/7, Google Ads marketing budget, social media marketing budget, private founder community, all future updates, and a $10,000 VC-backed marketing budget after 100 customers.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is there really a money-back guarantee?</h3>
+                <p>Yes! If you don't get your first paying customer within 30 days, we'll refund your purchase. You must complete all AI workflows and follow the recommendations.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+          <div class="container">
+            <h2>Stop Dreaming. Start Building.</h2>
+            <p>Last chance to join 500+ founders at 50% OFF. Prices double tomorrow.</p>
+            <a href="#pricing" class="btn btn-primary btn-large">🚀 Launch Your Startup Today</a>
+            <p class="cta-note">✅ First Customer in 30 Days or Money Back</p>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-content">
+              <div class="footer-section">
+                <h4>StartupGPT</h4>
+                <p>Your AI-powered path from idea to revenue in 30 days.</p>
+              </div>
+              <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#pricing">Pricing</a></li>
+                  <li><a href="#testimonials">Success Stories</a></li>
+                  <li><a href="#faq">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                  <li><a href="/privacy">Privacy Policy</a></li>
+                  <li><a href="/terms">Terms of Service</a></li>
+                  <li><a href="/refund">Refund Policy</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: support@startupgpt.pro</p>
+                <p>Available 24/7</p>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2025 StartupGPT. All rights reserved.</p>
+              <p>From the makers of <a href="https://vowcraft.io" target="_blank" rel="noopener">vowcraft.io</a> and The Lean Startup</p>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
     
     <!-- Google tag (gtag.js) -->
