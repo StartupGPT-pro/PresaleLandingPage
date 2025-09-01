@@ -233,7 +233,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin="" src="./assets/index-CF8kX6kc.js"></script>
+    <script type="module" crossorigin="" src="./assets/index-CF8kX6kc.js?v=20250901-2"></script>
     <link rel="modulepreload" crossorigin="" href="./assets/react-vendor-CIP6LD3P.js">
     <link rel="modulepreload" crossorigin="" href="./assets/utils-BzrgaQw0.js">
     <link rel="stylesheet" crossorigin="" href="./assets/index-Bm0GXlQj.css">
@@ -249,7 +249,13 @@
     </script>
   </head>
   <body>
-    <div id="root">
+    <div id="launch-banner" style="position:fixed;top:0;left:0;right:0;z-index:2147483647;">
+      <div style="max-width:1120px;margin:0 auto;padding:8px 16px;background:#FEF3C7;color:#78350F;border-bottom-left-radius:12px;border-bottom-right-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:center;">
+        <span>📣 Presale extended — we're scaling our server landscape while onboarding new people to the platform. Onboarding <strong>100 customers/day</strong> for a smooth experience. Launch Day: <strong>September 15, 2025</strong>. Countdown: <span id="launch-countdown"></span></span>
+        <span style="margin-left:8px;font-size:12px;font-weight:700;color:#7f1d1d;">If you already prepurchased, you'll receive an email with your personal launch day within the next two weeks.</span>
+      </div>
+    </div>
+    <div id="root" style="margin-top:56px;">
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
       <!-- Header -->
       <header class="fixed top-0 left-0 right-0 z-40 glass-effect border-b">
@@ -290,6 +296,22 @@
         <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
         <div class="relative w-full max-w-6xl mx-auto">
           <div class="text-center space-y-6">
+            <div class="max-w-3xl mx-auto">
+              <div class="inline-flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-900 dark:text-yellow-100 px-4 py-2 rounded-full mb-3">
+                <span>📣</span>
+                <span>Presale extended • Onboarding 100 presale customers/day to scale smoothly</span>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                If you prepurchased, you'll receive an email with your personal launch day within the next two weeks.
+              </p>
+              <div class="mt-4 flex items-center justify-center gap-3 text-gray-800 dark:text-gray-100">
+                <span class="font-semibold">Launch Day:</span>
+                <span class="font-bold text-primary-600 dark:text-primary-400">September 15, 2025</span>
+                <span class="opacity-60">•</span>
+                <span class="font-semibold">Countdown:</span>
+                <span id="launch-countdown" class="font-mono"></span>
+              </div>
+            </div>
             <div style="opacity: 1; transform: none;">
               <span class="inline-flex items-center font-medium rounded-md transition-colors bg-primary/10 text-primary border-transparent px-3 py-1 text-base">
                 <span class="mr-2">🚀</span>Limited Presale Pricing
@@ -513,7 +535,7 @@
                     <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 1, 2025</span>
+                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 15, 2025</span>
                   </li>
                 
                   <li class="flex items-start gap-3">
@@ -611,7 +633,7 @@
                     <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 1, 2025</span>
+                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 15, 2025</span>
                   </li>
                 
                   <li class="flex items-start gap-3">
@@ -723,7 +745,7 @@
                     <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 1, 2025</span>
+                    <span class="text-gray-700 dark:text-gray-300 text-sm">Access on September 15, 2025</span>
                   </li>
                 
                   <li class="flex items-start gap-3">
@@ -1018,7 +1040,7 @@
 
         <div class="mt-8 space-y-2 text-white/80 text-sm">
           <p>✅ First Customer in 30 Days or Money Back*</p>
-          <p>✅ Instant Access on September 1, 2025</p>
+          <p>✅ Instant Access on September 15, 2025</p>
           <p>✅ Regular Price: $599 (You Save $300)</p>
           <p class="text-white font-bold">⚠️ Only 47 spots left at this price</p>
         </div>
@@ -1090,6 +1112,50 @@
     <div id="modal-container"></div>
   </div></div>
     
+    <script>
+      (function() {
+        const target = new Date('2025-09-15T00:00:00Z').getTime();
+        const el = document.getElementById('launch-countdown');
+        if (!el) return;
+        function pad(n){ return String(n).padStart(2,'0'); }
+        function tick() {
+          const now = Date.now();
+          let diff = Math.max(0, target - now);
+          const days = Math.floor(diff / (1000*60*60*24)); diff -= days*(1000*60*60*24);
+          const hours = Math.floor(diff / (1000*60*60)); diff -= hours*(1000*60*60);
+          const mins = Math.floor(diff / (1000*60)); diff -= mins*(1000*60);
+          const secs = Math.floor(diff / 1000);
+          el.textContent = `${days}d ${pad(hours)}h ${pad(mins)}m ${pad(secs)}s`;
+        }
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
+    <script>
+      // Post-hydration text fixes inside the React app
+      (function() {
+        const replacements = [
+          [/\u2713\s*Launch\s*Sept(?:ember)?\s*1/gi, '✓ Launch 15 Sep'],
+          [/\u2705\s*Launch\s*Sept(?:ember)?\s*1/gi, '✅ Launch 15 Sep'],
+          [/Launch\s*Sept(?:ember)?\s*1/gi, 'Launch 15 Sep'],
+          [/Sept\s*1,?\s*2025/gi, 'September 15, 2025']
+        ];
+        function replaceInNode(node){
+          if (node.nodeType === Node.TEXT_NODE) {
+            let text = node.nodeValue, changed = false;
+            for (const [re, val] of replacements) {
+              if (re.test(text)) { text = text.replace(re, val); changed = true; }
+            }
+            if (changed) node.nodeValue = text;
+          } else {
+            for (const child of node.childNodes) replaceInNode(child);
+          }
+        }
+        function run(){ replaceInNode(document.body); }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+        else setTimeout(run, 0);
+      })();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17330092845"></script>
     <script>
